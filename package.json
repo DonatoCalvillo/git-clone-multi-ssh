@@ -1,17 +1,50 @@
 {
   "name": "git-clone-multi",
   "version": "1.0.0",
-  "description": "Clone GitHub repos selecting which SSH key to use",
+  "description": "Interactive CLI to clone GitHub repos by selecting which SSH key to use from your ~/.ssh/config",
   "type": "module",
   "bin": {
     "git-clone-multi": "./dist/index.js"
   },
-  "packageManager": "pnpm@11.2.2",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "prepublishOnly": "pnpm run build",
+    "prepare": "pnpm run build"
   },
+  "keywords": [
+    "cli",
+    "git",
+    "git-clone",
+    "github",
+    "ssh",
+    "ssh-config",
+    "ssh-keys",
+    "multi-account",
+    "developer-tools"
+  ],
+  "author": "Edgar Calvillo <donatocalvillo@users.noreply.github.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonatoCalvillo/git-clone-multi-ssh.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DonatoCalvillo/git-clone-multi-ssh/issues"
+  },
+  "homepage": "https://github.com/DonatoCalvillo/git-clone-multi-ssh#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "packageManager": "pnpm@11.2.2",
   "dependencies": {
     "@clack/prompts": "^0.9.1"
   },

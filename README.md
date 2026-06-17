@@ -38,28 +38,26 @@ It works, but it's tedious and easy to forget. **git-clone-multi** does that rep
 
 ## How to Install
 
-You need [Node.js 18+](https://nodejs.org/), [pnpm](https://pnpm.io/), and [Git](https://git-scm.com/).
+You need [Node.js 18+](https://nodejs.org/) and [Git](https://git-scm.com/).
 
-**1. Clone the repository**
+**From npm (recommended)**
 
 ```bash
-git clone https://github.com/your-username/git-clone-multi.git
-cd git-clone-multi
+npm install -g git-clone-multi
+# or
+pnpm add -g git-clone-multi
 ```
 
-**2. Install dependencies and build**
+**From source**
 
 ```bash
-pnpm install --ignore-scripts && pnpm run build
-```
-
-**3. Register it as a global command**
-
-```bash
+git clone https://github.com/DonatoCalvillo/git-clone-multi-ssh.git
+cd git-clone-multi-ssh
+pnpm install
 pnpm install -g .
 ```
 
-Done. You can run `git-clone-multi` from any directory.
+Done. Run `git-clone-multi` from any directory.
 
 > **Prerequisite:** your `~/.ssh/config` must have `Host` blocks with `IdentityFile` set. [See example ↓](#ssh-config)
 
